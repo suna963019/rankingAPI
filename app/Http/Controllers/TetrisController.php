@@ -31,4 +31,10 @@ class TetrisController extends Controller
         }
         return [$num];
     }
+    function test(){
+        $table = new Tetris_score();
+        $data=['name'=>'test','point'=>550];
+        $table->fill($data)->save();
+        return ['OK'];
+    }
 }

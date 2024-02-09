@@ -6,6 +6,7 @@ use App\Http\Controllers\TetrisController;
 use App\Http\Controllers\TypingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Psy\TabCompletion\Matcher\FunctionsMatcher;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 //test
 Route::get('/test',function(){
-    return ['OK'];
+    return ['ok'];
 });
+Route::get('/test/add',[TetrisController::class,'test']);
 
 //tetris
 Route::get('/tetris/index',[TetrisController::class,'index']);
